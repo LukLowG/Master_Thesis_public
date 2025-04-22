@@ -46,18 +46,6 @@ The EMA System consists of several core modules:
 - Statistical analysis of system performance
 - Visualization tools for result analysis
 
-## Installation
-
-### Local Installation
-
-```bash
-# Clone the repository
-git clone https://github.com/physiomio/src.git
-
-# Install dependencies
-pip install -r requirements.txt
-```
-
 ### Docker Container
 
 The system includes a Dockerfile for containerized deployment:
@@ -76,14 +64,14 @@ The repository includes scripts for deploying and
 running training jobs on AWS SageMaker:
 
 - `Dockerfile` and `entrypoint.py`: Container definition for SageMaker
-- `create_training_job.py`: Script to configure and launch SageMaker training jobs
-- `build_and_push.sh`: Utility script to build and push Docker image to ECR
+- `create_train.py`: Script to configure and launch SageMaker training jobs
+- `b_push.sh`: Utility script to build and push Docker image to ECR
 
 To deploy on SageMaker:
 
 ```bash
 # Build and push Docker image to ECR
-./build_and_push.sh
+./b_push.sh
 
 # Create and start training job
 python create_training_job.py
